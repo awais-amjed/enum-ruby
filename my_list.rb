@@ -1,9 +1,11 @@
 class MyList
-  list
+  def initialize(list)
+    @list = list
+  end
 
-  def self.each
+  def self.each(&block)
     return 'No block given' unless block_given?
 
-    self.list.each { |value| yield value }
+    @list.each(&block)
   end
 end
